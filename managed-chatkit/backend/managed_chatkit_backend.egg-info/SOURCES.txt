@@ -1,0 +1,8 @@
+pyproject.toml
+app/__init__.py
+app/main.py
+managed_chatkit_backend.egg-info/PKG-INFO
+managed_chatkit_backend.egg-info/SOURCES.txt
+managed_chatkit_backend.egg-info/dependency_links.txt
+managed_chatkit_backend.egg-info/requires.txt
+managed_chatkit_backend.egg-info/top_level.txt
