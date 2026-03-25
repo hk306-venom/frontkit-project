@@ -8,3 +8,10 @@ __pycache__/
 .coverage/
 *.log
 .env.local
+# env files
+.env*
+!.env.example
+/backend/.env*
+/backend/.venv
+/backend/.env
+/frontend/.env.local
