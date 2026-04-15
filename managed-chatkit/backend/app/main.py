@@ -171,12 +171,4 @@ def parse_json(response: httpx.Response) -> Mapping[str, Any]:
     except (json.JSONDecodeError, httpx.DecodingError):
         return {}
     
-    from fastapi.middleware.cors import CORSMiddleware
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # ya Vercel URL
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+  
