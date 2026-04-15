@@ -103,16 +103,21 @@ def respond(
     payload: Mapping[str, Any], status_code: int, cookie_value: str | None = None
 ) -> JSONResponse:
     response = JSONResponse(payload, status_code=status_code)
+
     if cookie_value:
         response.set_cookie(
             key=SESSION_COOKIE_NAME,
             value=cookie_value,
             max_age=SESSION_COOKIE_MAX_AGE_SECONDS,
             httponly=True,
-            samesite="lax",
-            secure=is_prod(),
+
+            # 🔥 IMPORTANT FIX (CHANGE THESE)
+            samesite="none",   # cross-site allow karega (Vercel + Render)
+            secure=True,       # HTTPS pe required hota hai
+
             path="/",
         )
+
     return response
 
 
